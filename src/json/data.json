@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "Product": "Ingamar",
+    "image": "https://wallpapers.com/images/hd/young-female-model-sitting-bench-4n5m8cetxjxbnxy2.jpg",
+    "type1": "new",
+    "color": "grey",
+    "price": "22"
+  },
+  {
+    "id": 2,
+    "Product": "Penny",
+    "image": "https://www.superstock.com/cdn/1566/Comp/1566-12876416.jpg",
+    "type1": "new",
+    "color": "grey",
+    "price": "15"
+  },
+  {
+    "id": 3,
+    "Product": "Livvy",
+    "image": "https://thumbs.dreamstime.com/b/rupture-mod%C3%A8le-fille-avec-les-jambes-crois%C3%A9es-regardant-vers-le-bas-instantan%C3%A9-de-studio-madame-dans-l-%C3%A9quipement-occasionnel-139526619.jpg",
+    "type1": "new",
+    "color": "white",
+    "price": "30"
+  },
+  {
+    "id": 4,
+    "Product": "Aveline",
+    "image": "https://plus.unsplash.com/premium_photo-1675200124904-dfadce24119f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW9kZWwlMjBnaXJsfGVufDB8fDB8fHww",
+    "type1": "sold",
+    "color": "white",
+    "price": "3.37"
+  },
+  {
+    "id": 5,
+    "Product": "Reinald",
+    "image": "https://thumbs.dreamstime.com/b/portrait-little-model-girl-portrait-little-model-girl-studio-139325294.jpg",
+    "type1": "sold",
+    "color": "grey",
+    "price": "7"
+  },
+  {
+    "id": 6,
+    "Product": "Tye",
+    "image": "https://www.apetogentleman.com/wp-content/uploads/2018/06/male-models-marlon.jpg",
+    "type1": "sold",
+    "color": "black",
+    "price": "5.74"
+  },
+  {
+    "id": 7,
+    "Product": "Florian",
+    "image": "https://st3.depositphotos.com/2056297/14633/i/450/depositphotos_146330135-stock-photo-portrait-of-sexy-man.jpg",
+    "type1": "sell",
+    "color": "black",
+    "price": "14.18"
+  },
+  {
+    "id": 8,
+    "Product": "Lilly",
+    "image": "https://voilastudio.in/old_website_assets/images/VMM11/2520.webp",
+    "type1": "sell",
+    "color": "white",
+    "price": "7.27"
+  },
+  {
+    "id": 9,
+    "Product": "Silvano",
+    "image": "https://lh5.googleusercontent.com/proxy/CqZr1BcOqaFPcBcScwKuJBMG0DOBA5LrS8i2Sby94RtEYwIraJX5jkBEo_3yiOmPrzX5kFK3njR3Cgw4H8_wlaaMz5QCTf2pyb8xK8xN316b7xY0c-5b4A",
+    "type1": "sell",
+    "color": "black",
+    "price": "17.24"
+  }
+]
