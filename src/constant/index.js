@@ -1,4 +1,5 @@
 import { Images } from "./images";
-import JsonData from "../json/data.json";
+import blogsData from "../json/blogs.json";
+import productsData from "../json/products.json";
 
-export { Images, JsonData };
+export { Images, blogsData, productsData };

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { NavBar } from "./layouts/navBar";
 import { HomePage } from "./pages/home/homePage";
 import { Footer } from "./layouts/footer";
+import { Blog } from './pages/Blog/Blog';
 import ProductDetail from './pages/product/ProductDetail';
 import { CartProvider } from './context/CartContext';
 import { Routes, Route } from 'react-router-dom';
@@ -15,6 +16,7 @@ function App() {
     <CartProvider>
       <NavBar />
       <Routes>
+      <Route path='/blog' element={<Blog />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/shop" element={<Shop />} />
         <Route path='/product/:id' element={<ProductDetail />} />
