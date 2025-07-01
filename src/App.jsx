@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { NavBar } from "./layouts/navBar";
 import { HomePage } from "./pages/home/homePage";
+import { CartProvider } from './context/CartContext';
 import { Routes, Route } from 'react-router-dom';
-import { Shop } from "./pages/shop/shop";
+import Shop from "./pages/shop/shop";
 import './App.css'
 
 function App() {
