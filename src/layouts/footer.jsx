@@ -65,7 +65,7 @@ export const Footer = () => {
             Returns
           </h1>
         </div>
-        <div className="">
+        <div className="  ">
           <h1 className="pb-12 font-bold">Help</h1>
           <h1 className="cursor-pointer duration-300 hover:text-red-500 mb-3">
             Track Order

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { NavBar } from "./layouts/navBar";
 import { HomePage } from "./pages/home/homePage";
 import { Footer } from "./layouts/footer";
-
+import ProductDetail from './pages/product/ProductDetail';
 import { CartProvider } from './context/CartContext';
 import { Routes, Route } from 'react-router-dom';
 import Shop from "./pages/shop/shop";
@@ -12,15 +12,15 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-     <NavBar />
-    <Routes>
-          <Route path="/" element={<HomePage />} />
+    <CartProvider>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/shop" element={<Shop />} />
-        </Routes>
-        <Footer />
-      
-    </>
+        <Route path='/product/:id' element={<ProductDetail />} />
+      </Routes>
+      <Footer />
+    </CartProvider>
   )
 }
 

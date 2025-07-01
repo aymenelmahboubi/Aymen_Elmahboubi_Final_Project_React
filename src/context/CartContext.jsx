@@ -2,7 +2,7 @@ import React, { createContext, useContext, useReducer, useEffect } from 'react';
 
 const CartContext = createContext();
 
-// Cart actions
+
 const CART_ACTIONS = {
     ADD_ITEM: 'ADD_ITEM',
     REMOVE_ITEM: 'REMOVE_ITEM',
@@ -11,7 +11,7 @@ const CART_ACTIONS = {
     LOAD_CART: 'LOAD_CART'
 };
 
-// Cart reducer
+
 const cartReducer = (state, action) => {
     switch (action.type) {
         case CART_ACTIONS.ADD_ITEM: {
@@ -71,17 +71,17 @@ const cartReducer = (state, action) => {
     }
 };
 
-// Initial state
+
 const initialState = {
     items: [],
     isOpen: false
 };
 
-// Cart Provider Component
+
 export const CartProvider = ({ children }) => {
     const [state, dispatch] = useReducer(cartReducer, initialState);
 
-    // Load cart from localStorage on mount
+   
     useEffect(() => {
         const savedCart = localStorage.getItem('fashe-cart');
         if (savedCart) {
@@ -94,12 +94,12 @@ export const CartProvider = ({ children }) => {
         }
     }, []);
 
-    // Save cart to localStorage whenever cart changes
+    
     useEffect(() => {
         localStorage.setItem('fashe-cart', JSON.stringify(state.items));
     }, [state.items]);
 
-    // Cart actions
+    
     const addToCart = (product, quantity = 1, selectedVariant = null) => {
         dispatch({
             type: CART_ACTIONS.ADD_ITEM,
@@ -157,7 +157,7 @@ export const CartProvider = ({ children }) => {
         return getCartSubtotal() + getCartTax(taxRate);
     };
 
-    // Check if item is in cart
+    // Check if pro is there
     const isInCart = (productId, selectedVariant = null) => {
         return state.items.some(item => 
             item.id === productId && 
@@ -165,7 +165,7 @@ export const CartProvider = ({ children }) => {
         );
     };
 
-    // Get item quantity in cart
+    // Get the pro quantity
     const getItemQuantity = (productId, selectedVariant = null) => {
         const item = state.items.find(item => 
             item.id === productId && 
@@ -175,24 +175,24 @@ export const CartProvider = ({ children }) => {
     };
 
     const value = {
-        // State
+       
         items: state.items,
         isOpen: state.isOpen,
         
-        // Actions
+    
         addToCart,
         removeFromCart,
         updateQuantity,
         clearCart,
         
-        // Calculations
+        
         getCartTotal,
         getCartCount,
         getCartSubtotal,
         getCartTax,
         getCartGrandTotal,
         
-        // Utilities
+        
         isInCart,
         getItemQuantity
     };
@@ -204,7 +204,7 @@ export const CartProvider = ({ children }) => {
     );
 };
 
-// Custom hook to use cart context
+
 export const useCart = () => {
     const context = useContext(CartContext);
     if (!context) {
