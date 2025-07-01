@@ -120,7 +120,7 @@ export const HomePage = () => {
         </div>
       </div>
       <h1 className="text-4xl font-bold text-center py-5">FEATURED PRODUCTS</h1>
-      {/* <div className="py-5">
+      <div className="py-5">
         <Swiper
           spaceBetween={0}
           navigation={true}
@@ -237,7 +237,7 @@ export const HomePage = () => {
             </div>
           </SwiperSlide>
         </Swiper>
-      </div> */}
+      </div>
 
       <div className="p-14 flex justify-center gap-5 bg-[#f2f2f2]">
         <div className="relative overflow-hidden">

@@ -213,7 +213,7 @@ const Shop = () => {
                 </div>
 
                 <div className="p-4">
-                    <h3 className="font-medium text-gray-800 mb-2 hover:text-red-500 transition-colors">
+                    <h3 className="font-medium text-gray-800 pb-2 hover:text-red-500 transition-colors">
                         {product.name}
                     </h3>
                     <div className="text-lg font-semibold text-gray-900">
@@ -231,7 +231,7 @@ const Shop = () => {
                     {/* Sidebar  */}
                     <div className="w-64 flex-shrink-0">
                         
-                        <div className="mb-8">
+                        <div className="pb-8">
                             <h3 className="text-lg font-semibold mb-4">Categories</h3>
                             <div className="space-y-2">
                                 {categories.map(category => (
@@ -251,7 +251,7 @@ const Shop = () => {
                         </div>
 
                         
-                        <div className="mb-8">
+                        <div className="pb-8 ">
                             <h3 className="text-lg font-semibold mb-4">color</h3>
                             <div className="space-y-2">
                                 {colors.map(color => (
@@ -269,7 +269,7 @@ const Shop = () => {
                         </div>
 
                         
-                        <div className="mb-8">
+                        <div className="pb-8">
                             <h3 className="text-lg font-semibold mb-4">price</h3>
                             <div className="space-y-2">
                                 {priceRanges.map(range => (
@@ -287,7 +287,7 @@ const Shop = () => {
                         </div>
 
                         
-                        <div className="mb-8">
+                        <div className="pb-8">
                             <h3 className="text-lg font-semibold mb-4">size</h3>
                             <div className="space-y-2">
                                 {sizes.map(size => (
@@ -305,7 +305,7 @@ const Shop = () => {
                         </div>
 
                        
-                        <div className="mb-8">
+                        <div className="pb-8">
                             <div className="relative">
                                 <input
                                     type="text"
