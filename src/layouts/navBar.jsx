@@ -18,8 +18,8 @@ export const NavBar = ({ openCartModal }) => {
           Home
         </li>
         <li onClick={() => navigate("/shop")} className="hover:text-red-500 cursor-pointer">Shop</li>
-        <li className="hover:text-red-500 cursor-pointer">sales</li>
-        <li className="hover:text-red-500 cursor-pointer">Features</li>
+        <li onClick={() => navigate("/sales")} className="hover:text-red-500 cursor-pointer">sales</li>
+        <li onClick={() => navigate("/features")} className="hover:text-red-500 cursor-pointer">Features</li>
         <li
           onClick={() => navigate("/blog")}
           className="hover:text-red-500 cursor-pointer"
@@ -41,7 +41,7 @@ export const NavBar = ({ openCartModal }) => {
       </ul>
       <div className="flex ps-6 items-center gap-6">
         <span className="text-3xl cursor-pointer">
-          <PiUserCircleLight onClick={() => navigate("/account")}/>
+          <PiUserCircleLight onClick={() => navigate("/login")}/>
         </span>
         <span className="text-3xl cursor-pointer">
           <HiOutlineShoppingBag onClick={openCartModal} />
