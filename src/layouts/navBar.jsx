@@ -4,7 +4,7 @@ import { PiUserCircleLight } from "react-icons/pi";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
 
-export const NavBar = () => {
+export const NavBar = ({ openCartModal }) => {
   let navigate = useNavigate();
 
   return (
@@ -44,7 +44,7 @@ export const NavBar = () => {
           <PiUserCircleLight onClick={() => navigate("/account")}/>
         </span>
         <span className="text-3xl cursor-pointer">
-          <HiOutlineShoppingBag />
+          <HiOutlineShoppingBag onClick={openCartModal} />
         </span>
       </div>
     </div>

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { FaTimes, FaPlus, FaMinus, FaTrash, FaShoppingBag } from 'react-icons/fa';
 import { useCart } from '../context/CartContext';
-import CheckoutModal from './CheckoutModal';
-import images from '../constants/images';
+import { Images } from "../constant/images";
 
 const CartModal = ({ isOpen, onClose }) => {
     const { 
@@ -16,8 +15,6 @@ const CartModal = ({ isOpen, onClose }) => {
         getCartCount 
     } = useCart();
     
-    const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
-
     if (!isOpen) return null;
 
     const handleQuantityChange = (cartId, newQuantity) => {
@@ -28,27 +25,14 @@ const CartModal = ({ isOpen, onClose }) => {
         }
     };
 
-    const handleCheckout = () => {
-        setIsCheckoutOpen(true);
-    };
-
-    const handleCheckoutComplete = () => {
-        setIsCheckoutOpen(false);
-        clearCart();
-        onClose();
-    };
-
     return (
         <>
-         
             <div 
                 className="fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity"
                 onClick={onClose}
             />
-            
             {/* Cart Modal */}
             <div className="fixed right-0 top-0 h-full w-full max-w-md bg-white z-50 transform transition-transform shadow-2xl">
-             
                 <div className="flex items-center justify-between p-6 border-b border-gray-200">
                     <h2 className="text-xl font-semibold">Shopping Cart ({getCartCount()})</h2>
                     <button
@@ -58,7 +42,6 @@ const CartModal = ({ isOpen, onClose }) => {
                         <FaTimes size={20} />
                     </button>
                 </div>
-
                 {/* Cart Items */}
                 <div className="flex-1 overflow-y-auto max-h-[calc(100vh-200px)]">
                     {items.length === 0 ? (
@@ -74,28 +57,22 @@ const CartModal = ({ isOpen, onClose }) => {
                                     {/* Product Image */}
                                     <div className="w-16 h-16 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
                                         <img
-                                            src={images.shopi2} 
+                                            src={Images.carouselImg2} 
                                             alt={item.name}
                                             className="w-full h-full object-cover"
                                         />
                                     </div>
-
-                                    
                                     <div className="flex-1 min-w-0">
                                         <h3 className="font-medium text-sm line-clamp-2 mb-1">
                                             {item.name}
                                         </h3>
                                         <p className="text-xs text-gray-500 mb-1">{item.brand}</p>
-                                        
-                                     
                                         {item.selectedVariant && (
                                             <p className="text-xs text-gray-500 mb-2">
                                                 {item.selectedVariant.size && `Size: ${item.selectedVariant.size}`}
                                                 {item.selectedVariant.color && ` • Color: ${item.selectedVariant.color}`}
                                             </p>
                                         )}
-
-                                   
                                         <div className="flex items-center gap-2 mb-2">
                                             <span className="font-semibold text-sm">${item.price}</span>
                                             {item.originalPrice > item.price && (
@@ -104,7 +81,6 @@ const CartModal = ({ isOpen, onClose }) => {
                                                 </span>
                                             )}
                                         </div>
-
                                         <div className="flex items-center gap-2">
                                             <button
                                                 onClick={() => handleQuantityChange(item.cartId, item.quantity - 1)}
@@ -123,8 +99,7 @@ const CartModal = ({ isOpen, onClose }) => {
                                             </button>
                                         </div>
                                     </div>
-
-                                    {/* Remove Button */}
+                                   
                                     <button
                                         onClick={() => removeFromCart(item.cartId)}
                                         className="p-2 text-red-500 hover:bg-red-50 rounded-full transition-colors"
@@ -136,11 +111,8 @@ const CartModal = ({ isOpen, onClose }) => {
                         </div>
                     )}
                 </div>
-
-               
                 {items.length > 0 && (
                     <div className="border-t border-gray-200 p-6 bg-gray-50">
-                       
                         <div className="space-y-2 mb-4">
                             <div className="flex justify-between text-sm">
                                 <span>Subtotal:</span>
@@ -155,15 +127,7 @@ const CartModal = ({ isOpen, onClose }) => {
                                 <span>${getCartGrandTotal().toFixed(2)}</span>
                             </div>
                         </div>
-
-                     
                         <div className="space-y-2">
-                            <button
-                                onClick={handleCheckout}
-                                className="w-full bg-black text-white py-3 px-4 rounded-lg font-medium hover:bg-gray-800 transition-colors"
-                            >
-                                Proceed to Checkout
-                            </button>
                             <button
                                 onClick={clearCart}
                                 className="w-full bg-gray-200 text-gray-700 py-2 px-4 rounded-lg font-medium hover:bg-gray-300 transition-colors"
@@ -174,15 +138,6 @@ const CartModal = ({ isOpen, onClose }) => {
                     </div>
                 )}
             </div>
-
-          
-            <CheckoutModal
-                isOpen={isCheckoutOpen}
-                onClose={() => setIsCheckoutOpen(false)}
-                onComplete={handleCheckoutComplete}
-                cartItems={items}
-                total={getCartGrandTotal()}
-            />
         </>
     );
 };
